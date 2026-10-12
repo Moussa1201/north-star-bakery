@@ -205,3 +205,26 @@ input:focus, select:focus, textarea:focus { outline: 3px solid var(--brown); out
   .visit-card { flex: 1 1 19rem; align-self: flex-start; }
   .visit-strip { padding: 2rem; }
 }
+
+
+/* Saved items and field feedback share the existing bakery colors. */
+.favorites-section { margin-bottom: 2rem; }
+.favorite-products { display: flex; flex-direction: column; gap: 1rem; }
+.favorite-product { flex: 1; padding: 1rem; border: 1px solid var(--peach); min-width: 0; }
+.favorite-product h3 { margin-top: 0; }
+.favorite-product .button { width: 100%; }
+.favorite-button[aria-pressed="true"] { background: var(--peach); color: var(--charcoal); border-color: var(--charcoal); }
+.favorites-summary, .saved-favorites-panel { margin-top: 1.25rem; padding-top: 1rem; border-top: 1px solid var(--peach); }
+.favorites-summary h3, .saved-favorites-panel h3 { margin-top: 0; }
+.favorites-summary .button { margin: 0.25rem 0.4rem 0 0; }
+.secondary-button { background: var(--cream); color: var(--brown); }
+.button:disabled { cursor: default; opacity: 0.65; }
+.field-error { display: block; color: var(--brown); font-size: 0.95rem; font-weight: bold; margin-top: 0.35rem; }
+.field-error:empty { display: none; }
+[aria-invalid="true"] { border: 2px solid var(--brown); }
+.form-status:not(:empty) { border-left: 4px solid var(--brown); padding: 0.6rem 0.9rem; margin: 1rem 0; }
+.has-errors { font-weight: bold; }
+[hidden] { display: none !important; }
+@media (min-width: 48rem) {
+  .favorite-products { flex-direction: row; align-items: stretch; }
+}

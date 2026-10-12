@@ -6,6 +6,7 @@
   <title>Contact and Preorders | North Star Bakery</title>
 <link rel="stylesheet" href="styles.css">
 <meta name="description" content="Ask North Star Bakery a question or practice a preorder request. Find our San Francisco location and hours.">
+<script src="script.js" defer></script>
 </head>
 <body class="contact-page">
   <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -33,49 +34,61 @@
       <p>Ask about a product or request treats for your next gathering.
         Include quantities and any special instructions.</p>
       <p id="form-help" class="form-note">Fields marked required must be completed.
-        This practice form does not send or save requests.</p>
+        This demo lets you check a request but does not send it to the bakery.</p>
       <form id="request-form" action="contact.html#request-form" method="get" aria-describedby="form-help">
-        <fieldset>
+        <div class="saved-favorites-panel">
+  <h3>Your saved items</h3>
+  <p id="saved-favorites-text"></p>
+  <button id="use-favorites" class="button secondary-button" type="button" hidden>Use favorites in item details</button>
+</div>
+<p id="form-status" class="form-status" role="status" aria-live="polite"></p>
+<fieldset>
           <legend>Your contact information</legend>
           <p>
             <label for="customer-name">Name (required)</label><br>
-            <input type="text" id="customer-name" name="customer_name" autocomplete="name" minlength="2" maxlength="80" required>
+            <input type="text" id="customer-name" name="customer_name" autocomplete="name" minlength="2" maxlength="80" required aria-describedby="customer-name-error">
+<span id="customer-name-error" class="field-error"></span>
           </p>
           <p>
             <label for="email">Email (required)</label><br>
-            <input type="email" id="email" name="email" autocomplete="email" maxlength="254" required>
+            <input type="email" id="email" name="email" autocomplete="email" maxlength="254" required aria-describedby="email-error">
+<span id="email-error" class="field-error"></span>
           </p>
         </fieldset>
         <fieldset>
           <legend>Your question or preorder</legend>
           <p>
             <label for="request-type">Request type (required)</label><br>
-            <select id="request-type" name="request_type" required>
+            <select id="request-type" name="request_type" required aria-describedby="request-type-error">
               <option value="">Choose a request type</option>
               <option value="preorder">Preorder request</option>
               <option value="question">General question</option>
             </select>
+<span id="request-type-error" class="field-error"></span>
           </p>
           <p id="pickup-help">For preorders, choose your preferred pickup date.
             For general questions, leave it blank. We are closed Mondays.
             Allow two days for bread and pastries or five days for cakes.</p>
           <p>
             <label for="pickup-date">Preferred pickup date</label><br>
-            <input type="date" id="pickup-date" name="pickup_date" aria-describedby="pickup-help">
+            <input type="date" id="pickup-date" name="pickup_date" aria-describedby="pickup-help pickup-date-error">
+<span id="pickup-date-error" class="field-error"></span>
           </p>
           <p>
             <label for="item-details">Item details or question (required)</label><br>
-            <textarea id="item-details" name="item_details" rows="5" cols="30" minlength="10" maxlength="2000" required></textarea>
+            <textarea id="item-details" name="item_details" rows="5" cols="30" minlength="10" maxlength="2000" required aria-describedby="item-details-error"></textarea>
+<span id="item-details-error" class="field-error"></span>
           </p>
           <p id="allergy-help">Tell us about any food allergies.
             Our kitchen uses shared equipment; we cannot guarantee
             an allergen-free product.</p>
           <p>
             <label for="allergy-notes">Allergy notes (optional)</label><br>
-            <textarea id="allergy-notes" name="allergy_notes" rows="3" cols="30" maxlength="1000" aria-describedby="allergy-help"></textarea>
+            <textarea id="allergy-notes" name="allergy_notes" rows="3" cols="30" maxlength="1000" aria-describedby="allergy-help allergy-notes-error"></textarea>
+<span id="allergy-notes-error" class="field-error"></span>
           </p>
         </fieldset>
-        <p><button type="submit" class="button">Submit practice request</button></p>
+        <p><button type="submit" class="button">Check my request</button></p>
       </form>
     </section>
     <section id="visit" class="visit-card">
@@ -103,3 +116,4 @@
   </footer>
 </body>
 </html>
+

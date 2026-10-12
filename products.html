@@ -6,6 +6,7 @@
   <title>Products | North Star Bakery</title>
 <link rel="stylesheet" href="styles.css">
 <meta name="description" content="Explore North Star Bakery breads, pastries, cookies, and cakes, with sample prices and pickup information.">
+<script src="script.js" defer></script>
 </head>
 <body class="products-page">
   <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -30,6 +31,20 @@
       Selection varies by day. Prices below are sample ranges;
       we confirm availability and the total before accepting a preorder.</p>
     </div>
+<section class="card favorites-section" aria-labelledby="favorites-heading">
+  <h2 id="favorites-heading">Save your favorites</h2>
+  <p>Keep a shortlist for your next visit. Your favorites stay on this browser.</p>
+  <div id="favorite-products" class="favorite-products"></div>
+  <div class="favorites-summary">
+    <h3>Your saved favorites</h3>
+    <p id="favorite-count" role="status" aria-live="polite">No favorites saved yet.</p>
+    <ul id="favorite-list" aria-label="Saved bakery items"></ul>
+    <p id="storage-message" role="status"></p>
+    <button id="clear-favorites" type="button" class="button secondary-button" disabled>Clear favorites</button>
+    <a class="button" href="contact.html">Plan a pickup</a>
+  </div>
+  <noscript><p>Turn on JavaScript to save favorites. The product descriptions and request form are still available below.</p></noscript>
+</section>
 <div class="product-layout">
 <section class="card bread-section">
       <h2>Breads</h2>
@@ -80,3 +95,4 @@
   </footer>
 </body>
 </html>
+
