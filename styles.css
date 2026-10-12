@@ -1,0 +1,207 @@
+/* North Star Bakery — shared mobile-first styles for all four pages. */
+:root {
+  --cream: #FFF8F0;
+  --brown: #6B3E26;
+  --peach: #D88C5A;
+  --charcoal: #2F2A26;
+}
+
+* { box-sizing: border-box; }
+html { font-size: 100%; }
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--charcoal);
+  font-family: Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.65;
+}
+img { display: block; max-width: 100%; height: auto; }
+picture { display: block; min-width: 0; }
+a { color: var(--brown); text-underline-offset: 0.2em; }
+a:hover { text-decoration-thickness: 0.15em; }
+a, button, input, select, textarea { -webkit-tap-highlight-color: var(--peach); }
+:focus-visible { outline: 3px solid var(--brown); outline-offset: 4px; }
+h1, h2, h3 {
+  color: var(--brown);
+  font-family: Georgia, serif;
+  line-height: 1.2;
+  overflow-wrap: break-word;
+}
+h1 { margin: 0.25rem 0 1rem; font-size: 2.35rem; font-weight: 400; }
+h2 { margin: 0 0 1rem; font-size: 1.75rem; font-weight: 400; }
+h3 { margin: 1.5rem 0 0.5rem; font-size: 1.2rem; }
+p { margin: 0 0 1rem; }
+ul { padding-left: 1.3rem; }
+li { margin-bottom: 0.5rem; }
+section, .page-intro, .feature-copy, .story-copy { min-width: 0; }
+section > :last-child, .page-intro > :last-child { margin-bottom: 0; }
+
+/* The skip link becomes visible when reached with the keyboard. */
+.skip-link {
+  position: absolute;
+  top: -6rem;
+  left: 1rem;
+  z-index: 10;
+  padding: 0.75rem 1rem;
+  color: var(--cream);
+  background: var(--brown);
+}
+.skip-link:focus { top: 1rem; }
+.site-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  max-width: 75rem;
+  margin: 0 auto;
+  padding: 1.25rem;
+  border-bottom: 1px solid var(--peach);
+}
+.brand { flex-shrink: 0; }
+.brand img { width: 7.25rem; }
+nav { width: 100%; }
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.25rem 0.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+nav li { margin: 0; }
+nav a {
+  display: block;
+  padding: 0.75rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-decoration: none;
+  border-bottom: 3px solid transparent;
+}
+nav a:hover, nav a[aria-current="page"] { border-bottom-color: var(--brown); }
+.page-main { max-width: 75rem; margin: 0 auto; padding: 2rem 1.25rem 3rem; }
+.page-intro { max-width: 48rem; margin-bottom: 2rem; }
+.page-intro > p:not(.eyebrow) { max-width: 42rem; font-size: 1.1rem; }
+.eyebrow { color: var(--brown); font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em; }
+.home-hero { display: flex; flex-direction: column; gap: 1.5rem; margin-bottom: 2rem; }
+.home-hero .page-intro { margin: 0; }
+.hero-image { width: 100%; border-radius: 0.25rem; object-fit: cover; }
+.button {
+  display: inline-block;
+  max-width: 100%;
+  padding: 0.85rem 1.3rem;
+  border: 2px solid var(--brown);
+  border-radius: 0.25rem;
+  background: var(--brown);
+  color: var(--cream);
+  font-family: Arial, sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.4;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+.button:hover { background: var(--cream); color: var(--brown); }
+.card { padding: 1.25rem; border: 1px solid var(--peach); border-radius: 0.25rem; }
+.welcome-strip { padding: 1.75rem 0; border-top: 1px solid var(--peach); }
+.welcome-strip p { max-width: 48rem; }
+.feature-card { display: flex; flex-direction: column; gap: 1.5rem; margin: 1rem 0 2rem; }
+.feature-card picture img { width: 100%; border-radius: 0.2rem; }
+.visit-strip, .visit-card {
+  padding: 1.5rem;
+  background: var(--peach);
+  color: var(--charcoal);
+  border-radius: 0.25rem;
+}
+.visit-strip h2, .visit-card h2, .visit-card h3,
+.visit-strip a, .visit-card a { color: var(--charcoal); }
+.product-layout, .about-columns, .contact-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+.bread-gallery { display: flex; flex-direction: column; gap: 1.5rem; margin-top: 1.5rem; }
+.bread-gallery > img { width: 100%; object-fit: cover; }
+figure { margin: 0; min-width: 0; }
+figure h3 { margin-top: 0; }
+figure img { width: 100%; }
+figcaption { margin-top: 0.75rem; font-size: 0.95rem; }
+.story-card { display: flex; flex-direction: column; gap: 1.5rem; margin-bottom: 1.5rem; }
+.story-card > img { width: 100%; object-fit: cover; }
+.audio-section { padding: 1.5rem 0 0; border-top: 1px solid var(--peach); }
+audio { display: block; width: 100%; max-width: 32rem; margin: 1rem 0; }
+.audio-section a { overflow-wrap: anywhere; }
+address { font-style: normal; }
+.contact-layout { align-items: stretch; }
+.visit-card { align-self: stretch; }
+.form-note { font-size: 0.95rem; }
+fieldset {
+  min-width: 0;
+  margin: 1.5rem 0;
+  padding: 1rem;
+  border: 1px solid var(--brown);
+}
+legend { padding: 0 0.4rem; font-weight: 700; color: var(--brown); }
+label { display: inline-block; margin-bottom: 0.35rem; font-weight: 700; }
+input, select, textarea {
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--brown);
+  border-radius: 0.15rem;
+  background: var(--cream);
+  color: var(--charcoal);
+  font-family: Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+textarea { resize: vertical; }
+input:focus, select:focus, textarea:focus { outline: 3px solid var(--brown); outline-offset: 2px; }
+#pickup-help, #allergy-help { font-size: 0.95rem; }
+.site-footer {
+  padding: 2rem 1.25rem;
+  background: var(--brown);
+  color: var(--cream);
+  text-align: center;
+}
+.site-footer a { color: var(--cream); }
+.site-footer > p:first-child { font-family: Georgia, serif; font-size: 1.5rem; }
+.site-footer p { margin-bottom: 0.5rem; }
+.site-footer :focus-visible { outline-color: var(--cream); }
+
+/* Desktop enhancements build on the single-column phone layout. */
+@media (min-width: 48rem) {
+  .site-header { flex-direction: row; justify-content: space-between; padding: 1.5rem 2.5rem; }
+  .brand img { width: 8.5rem; }
+  nav { width: auto; }
+  nav ul { justify-content: flex-end; }
+  .page-main { padding: 3rem 2.5rem 4rem; }
+  h1 { font-size: 3.5rem; }
+  h2 { font-size: 2rem; }
+  .home-hero { flex-direction: row; align-items: center; gap: 3rem; margin-bottom: 3rem; }
+  .home-hero .page-intro { flex: 1 1 50%; }
+  .hero-image { flex: 1 1 45%; width: 45%; }
+  .card { padding: 2rem; }
+  .feature-card { flex-direction: row; align-items: center; gap: 2rem; }
+  .feature-copy { flex: 1 1 45%; }
+  .feature-card picture { flex: 1 1 55%; }
+  .product-layout { flex-direction: row; flex-wrap: wrap; }
+  .product-layout > .card { flex: 1 1 20rem; }
+  .product-layout > .bread-section { flex-basis: 100%; }
+  .bread-gallery { flex-direction: row; align-items: flex-start; gap: 2rem; }
+  .bread-gallery > img { width: calc(50% - 1rem); }
+  .bread-gallery > figure { flex: 1 1 50%; }
+  .about-columns { flex-direction: row; align-items: stretch; }
+  .about-columns > section { flex: 1 1 50%; }
+  .story-card { flex-direction: row; align-items: center; gap: 2rem; }
+  .story-copy { flex: 1 1 50%; }
+  .story-card > img { width: 45%; flex: 1 1 45%; }
+  .contact-layout { flex-direction: row; align-items: flex-start; }
+  .request-section { flex: 2 1 36rem; }
+  .visit-card { flex: 1 1 19rem; align-self: flex-start; }
+  .visit-strip { padding: 2rem; }
+}
